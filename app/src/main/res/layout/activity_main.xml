@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.cnepay.dragger2.MainActivity">
+    tools:context="com.cnepay.dragger2.SubActivity">
 
     <TextView
         android:layout_width="wrap_content"
@@ -34,5 +34,11 @@
         android:id="@+id/btn3"
         android:layout_width="match_parent"
         android:text="singleton"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btn4"
+        android:layout_width="match_parent"
+        android:text="Dependence"
         android:layout_height="wrap_content"/>
 </LinearLayout>

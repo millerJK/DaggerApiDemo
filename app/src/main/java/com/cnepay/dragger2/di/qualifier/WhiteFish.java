@@ -1,4 +1,4 @@
-package com.cnepay.dragger2.di.modules;
+package com.cnepay.dragger2.di.qualifier;
 
 import javax.inject.Qualifier;
 

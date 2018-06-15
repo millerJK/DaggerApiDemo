@@ -12,7 +12,7 @@ import dagger.Component;
 @Component(modules = SomeClassModule.class)
 public interface SomeClassComponent {
 
-    SomeClassA1 getSomeClassA1();
+    SomeClassA1 getSomeClassA1(); //这个方法也只能在Dependence 形式的时候起作用,在SubComponent形式不起作用
 
     MainComponent.Builder sonComponent();    // 用来创建 Subcomponent
 

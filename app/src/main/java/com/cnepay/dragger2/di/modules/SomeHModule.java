@@ -2,6 +2,8 @@ package com.cnepay.dragger2.di.modules;
 
 import com.cnepay.dragger2.bean.SomeHC1;
 
+import javax.inject.Singleton;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -12,6 +14,7 @@ import dagger.Provides;
 @Module
 public class SomeHModule {
 
+    @Singleton
     @Provides
     SomeHC1 getSomeH(){
         return new SomeHC1();

@@ -1,7 +1,7 @@
-package com.cnepay.dragger2.bean;
+package com.cnepay.dragger2.bean.fish;
 
 /**
- * Created by wangning on 2018/5/24.
+ * Created by master on 2018/5/24.
  */
 
 public abstract class Fish {

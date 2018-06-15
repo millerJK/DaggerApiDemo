@@ -2,9 +2,9 @@ package com.cnepay.dragger2.di.modules;
 
 import android.content.Context;
 
-import com.cnepay.dragger2.bean.BlackFish;
-import com.cnepay.dragger2.bean.Fish;
-import com.cnepay.dragger2.bean.WhiteFish;
+import com.cnepay.dragger2.bean.fish.BlackFish;
+import com.cnepay.dragger2.bean.fish.Fish;
+import com.cnepay.dragger2.bean.fish.WhiteFish;
 
 import dagger.Module;
 import dagger.Provides;
@@ -23,14 +23,14 @@ public class FishModule {
     }
 
     @Provides
-    @com.cnepay.dragger2.di.modules.WhiteFish
+    @com.cnepay.dragger2.di.qualifier.WhiteFish
     Fish getWhiteFish() {
         return new WhiteFish();
     }
 
 
     @Provides
-    @com.cnepay.dragger2.di.modules.BlackFish
+    @com.cnepay.dragger2.di.qualifier.BlackFish
     Fish getBlackFish(){
         return new BlackFish();
     }

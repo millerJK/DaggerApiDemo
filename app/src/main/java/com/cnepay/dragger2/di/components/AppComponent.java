@@ -1,7 +1,8 @@
 package com.cnepay.dragger2.di.components;
 
+import android.content.Context;
+
 import com.cnepay.dragger2.MyApplication;
-import com.cnepay.dragger2.bean.Student;
 import com.cnepay.dragger2.di.modules.AppModule;
 import com.squareup.okhttp.OkHttpClient;
 
@@ -52,6 +53,8 @@ import dagger.Component;
  * SubComponent:
  * 1.
  * <p>
+ * 关于Scope的问题，也是@Component dependencies 和 @SubComponent最值得关注的区别。
+ * 1、两个拥有依赖关系的 Component 是不能有相同 @Scope 注解的！使用@SubComponent 则可以使用相同的@Scope注解。
  * <p>
  **/
 
@@ -62,7 +65,7 @@ public interface AppComponent {
 
     OkHttpClient getOkHttpClient();
 
-    Student getStudent();
+    Context getApplication();
 
     void injectMainApp(MyApplication application);
 

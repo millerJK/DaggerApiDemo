@@ -1,4 +1,4 @@
-package com.cnepay.dragger2.bean;
+package com.cnepay.dragger2.bean.fish;
 
 import javax.inject.Inject;
 
