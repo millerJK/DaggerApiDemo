@@ -11,7 +11,7 @@ import dagger.Subcomponent;
  * Created by master on 2018/5/23.
  */
 
-
+@Singleton
 @Subcomponent(modules = SomeHModule.class)
 public interface MainComponent {
 
