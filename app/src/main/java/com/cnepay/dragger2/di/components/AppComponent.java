@@ -1,9 +1,8 @@
 package com.cnepay.dragger2.di.components;
 
-import android.content.Context;
-
 import com.cnepay.dragger2.MyApplication;
 import com.cnepay.dragger2.di.modules.AppModule;
+import com.cnepay.dragger2.di.modules.AppModule2;
 import com.squareup.okhttp.OkHttpClient;
 
 import javax.inject.Singleton;
@@ -39,15 +38,15 @@ import dagger.Component;
  * <p>
  * <p>
  * dependence :
- * 1.Component(SonComponent) 仅继承 被依赖Component(FatherComponent) 中显示提供的依赖方法，如果不提供，则无法使用@Inject注入被依赖的Component(FatherComponent)中的对象
+ * 1.Component(SonComponent) 仅继承 被依赖Component(DepComponent1) 中显示提供的依赖方法，如果不提供，则无法使用@Inject注入被依赖的Component(DepComponent1)中的对象
  * 2.dependence 会生成两个独立的DaggerSonComponent 和 DaggerFatherComponent 两个独立类。
  * <p>
  * 代码示例
- * SomeClassComponent someClassComponent = DaggerSomeClassComponent.create();
+ * SubParentComponent someClassComponent = DaggerSomeClassComponent.create();
  * DaggerMainComponent.builder().someClassComponent(someClassComponent).build().injectMainActivity(this);
  * <p>
  * note:
- * (有待探究)SonComponent 和 FatherComponent 是依赖关系，如果其中一个声明了作用域的话，另外一个也必须声明，而且它们的 Scope 不能相同，FatherComponent 的生命周期 >= SonComponent *的声明周期。SonComponent 的 Scope 不能是 @Singleton，因为 Dagger 2 中 @Singleton 的 Component 不能依赖其他的 Component。所以这在Android中SingleTon 就会多被用于Application.
+ * (有待探究)SonComponent 和 DepComponent1 是依赖关系，如果其中一个声明了作用域的话，另外一个也必须声明，而且它们的 Scope 不能相同，DepComponent1 的生命周期 >= SonComponent *的声明周期。SonComponent 的 Scope 不能是 @Singleton，因为 Dagger 2 中 @Singleton 的 Component 不能依赖其他的 Component。所以这在Android中SingleTon 就会多被用于Application.
  * <p>
  * <p>
  * SubComponent:
@@ -60,12 +59,13 @@ import dagger.Component;
 
 
 @Singleton
-@Component(modules = {AppModule.class})
+@Component(modules = {AppModule.class, AppModule2.class})
 public interface AppComponent {
 
     OkHttpClient getOkHttpClient();
 
-    Context getApplication();
+    MyApplication getApplication();
+
 
     void injectMainApp(MyApplication application);
 

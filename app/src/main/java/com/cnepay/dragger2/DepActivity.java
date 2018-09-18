@@ -1,31 +1,30 @@
 package com.cnepay.dragger2;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import com.cnepay.dragger2.bean.fish.Fish;
 import com.cnepay.dragger2.di.components.DaggerDepComponent;
+import com.cnepay.dragger2.di.components.DaggerDepComponent1;
 import com.squareup.okhttp.OkHttpClient;
 
 import javax.inject.Inject;
-import javax.inject.Named;
 
-
+/**
+ * 依赖关系Dagger dependencies
+ */
 public class DepActivity extends BaseActivity {
 
     @Inject
-    Context application;
+    MyApplication application;
 
     @Inject
     OkHttpClient client;
 
-    @Named("blackFish")
-    @Inject
-    Fish fish;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +42,7 @@ public class DepActivity extends BaseActivity {
             }
         });
 
-        DaggerDepComponent.builder().appComponent(getAppComponent()).build();
+        DaggerDepComponent.builder().appComponent(getAppComponent()).depComponent1(DaggerDepComponent1.create()).build();
     }
 
 }

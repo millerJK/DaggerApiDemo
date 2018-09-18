@@ -13,13 +13,13 @@ import dagger.Subcomponent;
 
 @Singleton
 @Subcomponent(modules = SomeHModule.class)
-public interface MainComponent {
+public interface SubSonComponent {
 
     void injectMainActivity(SubActivity activity);
 
     @Subcomponent.Builder
     interface Builder {
-        MainComponent build();
+        SubSonComponent build();
     }
 
 }

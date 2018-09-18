@@ -5,22 +5,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.cnepay.dragger2.bean.fish.Fish;
 import com.cnepay.dragger2.bean.Human;
 import com.cnepay.dragger2.bean.SomeClassA1;
 import com.cnepay.dragger2.bean.SomeClassB1;
 import com.cnepay.dragger2.bean.SomeHC1;
 import com.cnepay.dragger2.bean.Student;
-import com.cnepay.dragger2.di.components.DaggerSomeClassComponent;
-import com.cnepay.dragger2.di.components.MainComponent;
-import com.cnepay.dragger2.di.components.SomeClassComponent;
-import com.cnepay.dragger2.di.qualifier.BlackFish;
-import com.squareup.okhttp.Callback;
-import com.squareup.okhttp.OkHttpClient;
+import com.cnepay.dragger2.di.components.DaggerSubParentComponent;
+import com.cnepay.dragger2.di.components.SubParentComponent;
 import com.squareup.okhttp.Request;
-import com.squareup.okhttp.Response;
-
-import java.io.IOException;
 
 import javax.inject.Inject;
 
@@ -30,7 +22,7 @@ import butterknife.Unbinder;
 
 /**
  * 本demo主要是了解Dagger2
- * 使用依赖注入的目的： 减少类间依赖，主要体现在变量的初始化
+ * 使用依赖注入的目的： 减少类间依赖，主要体现在变量的初始化，类间解耦
  * <p>
  * 1.增加开发效率、省去重复的简单体力劳动
  * 2.首先new一个实例的过程是一个重复的简单体力劳动，dagger2完全可以把new一个实例的工作做了，因此我们把主要精力集中在关键业务上、同时也能增加开发效率上。
@@ -63,11 +55,10 @@ public class SubActivity extends BaseActivity {
 
     private Unbinder mUnbinder;
 
-    private MainComponent mainComponent;
-
     Student student;
 
-    OkHttpClient client;
+//    @Inject
+//    OkHttpClient client;
 
     @Inject
     Human human1;
@@ -84,9 +75,6 @@ public class SubActivity extends BaseActivity {
     @Inject
     SomeHC1 mSomeHC1;
 
-    @Inject
-    @BlackFish
-    Fish blackFish;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,8 +83,8 @@ public class SubActivity extends BaseActivity {
         mUnbinder = ButterKnife.bind(this);
 
         //SubComponent
-        SomeClassComponent someClassComponent = DaggerSomeClassComponent.create();
-        someClassComponent.sonComponent().build().injectMainActivity(this);
+        SubParentComponent subParentComponent = DaggerSubParentComponent.create();
+        subParentComponent.sonComponent().build().injectMainActivity(this);
 
     }
 
@@ -106,7 +94,7 @@ public class SubActivity extends BaseActivity {
         this.student = student;
     }
 
-    @OnClick({R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4})
+    @OnClick({R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4,R.id.btn5})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn1:
@@ -116,22 +104,22 @@ public class SubActivity extends BaseActivity {
                 break;
             case R.id.btn2:
                 final Request request = new Request.Builder().url("https://github.com/hongyangAndroid").get().build();
-                client.newCall(request).enqueue(new Callback() {
-                    @Override
-                    public void onFailure(Request request, IOException e) {
-                    }
-
-                    @Override
-                    public void onResponse(final Response response) throws IOException {
-                        final String msg = response.body().string().toString();
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                Toast.makeText(SubActivity.this, msg, Toast.LENGTH_LONG).show();
-                            }
-                        });
-                    }
-                });
+//                client.newCall(request).enqueue(new Callback() {
+//                    @Override
+//                    public void onFailure(Request request, IOException e) {
+//                    }
+//
+//                    @Override
+//                    public void onResponse(final Response response) throws IOException {
+//                        final String msg = response.body().string().toString();
+//                        runOnUiThread(new Runnable() {
+//                            @Override
+//                            public void run() {
+//                                Toast.makeText(SubActivity.this, msg, Toast.LENGTH_LONG).show();
+//                            }
+//                        });
+//                    }
+//                });
                 break;
 
             case R.id.btn3:
@@ -141,6 +129,11 @@ public class SubActivity extends BaseActivity {
             case R.id.btn4:
                 Intent intent = new Intent(this, DepActivity.class);
                 startActivity(intent);
+                break;
+
+            case R.id.btn5:
+                Intent intent1 = new Intent(this, LazyAndProviderActivity.class);
+                startActivity(intent1);
                 break;
         }
     }

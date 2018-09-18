@@ -1,17 +1,18 @@
 package com.cnepay.dragger2.bean;
 
 import javax.inject.Inject;
-import javax.inject.Singleton;
 
 /**
  * Created by master on 2018/5/23.
  */
-
-@Singleton
 public class Student {
 
     @Inject
     public Student() {
+    }
+
+    public Student(String name) {
+        this.name = name;
     }
 
     private String name;

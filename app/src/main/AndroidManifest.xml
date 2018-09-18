@@ -25,6 +25,10 @@
             android:label="@string/title_activity_dependence"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity android:name=".LazyAndProviderActivity">
+        </activity>
+        <activity android:name=".QualiferActivity">
+        </activity>
     </application>
 
 </manifest>

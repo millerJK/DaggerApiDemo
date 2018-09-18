@@ -1,13 +1,9 @@
 package com.cnepay.dragger2.di.modules;
 
-import com.cnepay.dragger2.bean.fish.Fish;
 import com.cnepay.dragger2.bean.SomeClassA1;
 import com.cnepay.dragger2.bean.SomeClassB1;
-import com.cnepay.dragger2.di.components.MainComponent;
-import com.cnepay.dragger2.di.qualifier.BlackFish;
-import com.cnepay.dragger2.di.qualifier.WhiteFish;
+import com.cnepay.dragger2.di.components.SubSonComponent;
 
-import dagger.Binds;
 import dagger.Module;
 import dagger.Provides;
 
@@ -15,7 +11,7 @@ import dagger.Provides;
  * Created by master on 2018/5/25.
  */
 
-@Module(subcomponents = MainComponent.class)
+@Module(subcomponents = SubSonComponent.class)
 public abstract class SomeClassModule {
 
     @Provides
@@ -28,12 +24,4 @@ public abstract class SomeClassModule {
         return new SomeClassB1();
     }
 
-    @Binds
-    @BlackFish
-    abstract Fish provideBlackFish(com.cnepay.dragger2.bean.fish.BlackFish blackFish);
-
-
-    @Binds
-    @WhiteFish
-    abstract Fish provideWhiteFish(com.cnepay.dragger2.bean.fish.WhiteFish whiteFish);
 }

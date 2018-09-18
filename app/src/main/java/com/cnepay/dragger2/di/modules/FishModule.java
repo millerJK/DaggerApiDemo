@@ -31,7 +31,7 @@ public class FishModule {
 
     @Provides
     @com.cnepay.dragger2.di.qualifier.BlackFish
-    Fish getBlackFish(){
+    Fish getBlackFish() {
         return new BlackFish();
     }
 
