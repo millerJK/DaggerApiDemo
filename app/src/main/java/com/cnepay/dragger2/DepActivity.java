@@ -6,6 +6,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import com.cnepay.dragger2.bean.Student;
 import com.cnepay.dragger2.di.components.DaggerDepComponent;
 import com.cnepay.dragger2.di.components.DaggerDepComponent1;
 import com.squareup.okhttp.OkHttpClient;
@@ -23,7 +24,11 @@ public class DepActivity extends BaseActivity {
     @Inject
     OkHttpClient client;
 
+    @Inject
+    Student student;
 
+    @Inject
+    Student st;
 
 
     @Override

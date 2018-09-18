@@ -1,6 +1,7 @@
 package com.cnepay.dragger2.di.components;
 
 import com.cnepay.dragger2.MyApplication;
+import com.cnepay.dragger2.bean.SomeHC1;
 import com.cnepay.dragger2.di.modules.AppModule;
 import com.cnepay.dragger2.di.modules.AppModule2;
 import com.squareup.okhttp.OkHttpClient;
@@ -65,6 +66,8 @@ public interface AppComponent {
     OkHttpClient getOkHttpClient();
 
     MyApplication getApplication();
+
+    SomeHC1 getSomeHc1();
 
 
     void injectMainApp(MyApplication application);

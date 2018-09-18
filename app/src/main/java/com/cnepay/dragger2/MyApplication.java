@@ -84,7 +84,7 @@ public class MyApplication extends Application {
         }
         Log.e(TAG, "onCreate: " + students.toString());
 
-        Log.e(TAG, "onCreate: "+(someHc1 == someHc11) );
+        Log.e(TAG, "onCreate: " + (someHc1 == someHc11));
     }
 
     public AppComponent getAppComponent() {
