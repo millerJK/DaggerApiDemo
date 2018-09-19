@@ -21,8 +21,8 @@ public class AppModule {
 
     private MyApplication mApplication;
 
-    public AppModule() {
-    }
+//    public AppModule() {
+//    }
 
     public AppModule(MyApplication context) {
         this.mApplication = context;

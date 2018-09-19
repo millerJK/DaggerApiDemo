@@ -2,6 +2,7 @@ package com.cnepay.dragger2.di.components;
 
 import com.cnepay.dragger2.MyApplication;
 import com.cnepay.dragger2.bean.SomeHC1;
+import com.cnepay.dragger2.di.modules.ActivityBindModule;
 import com.cnepay.dragger2.di.modules.AppModule;
 import com.cnepay.dragger2.di.modules.AppModule2;
 import com.squareup.okhttp.OkHttpClient;
@@ -60,7 +61,7 @@ import dagger.Component;
 
 
 @Singleton
-@Component(modules = {AppModule.class, AppModule2.class})
+@Component(modules = {AppModule.class, AppModule2.class, ActivityBindModule.class})
 public interface AppComponent {
 
     OkHttpClient getOkHttpClient();

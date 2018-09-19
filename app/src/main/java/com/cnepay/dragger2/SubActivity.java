@@ -12,7 +12,6 @@ import com.cnepay.dragger2.bean.SomeHC1;
 import com.cnepay.dragger2.bean.Student;
 import com.cnepay.dragger2.di.components.DaggerSubParentComponent;
 import com.cnepay.dragger2.di.components.SubParentComponent;
-import com.squareup.okhttp.Request;
 
 import javax.inject.Inject;
 
@@ -94,7 +93,7 @@ public class SubActivity extends BaseActivity {
         this.student = student;
     }
 
-    @OnClick({R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4,R.id.btn5})
+    @OnClick({R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4,R.id.btn5,R.id.btn6})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn1:
@@ -103,23 +102,7 @@ public class SubActivity extends BaseActivity {
                 Toast.makeText(this, student.getName(), Toast.LENGTH_LONG).show();
                 break;
             case R.id.btn2:
-                final Request request = new Request.Builder().url("https://github.com/hongyangAndroid").get().build();
-//                client.newCall(request).enqueue(new Callback() {
-//                    @Override
-//                    public void onFailure(Request request, IOException e) {
-//                    }
-//
-//                    @Override
-//                    public void onResponse(final Response response) throws IOException {
-//                        final String msg = response.body().string().toString();
-//                        runOnUiThread(new Runnable() {
-//                            @Override
-//                            public void run() {
-//                                Toast.makeText(SubActivity.this, msg, Toast.LENGTH_LONG).show();
-//                            }
-//                        });
-//                    }
-//                });
+
                 break;
 
             case R.id.btn3:
@@ -134,6 +117,10 @@ public class SubActivity extends BaseActivity {
             case R.id.btn5:
                 Intent intent1 = new Intent(this, LazyAndProviderActivity.class);
                 startActivity(intent1);
+                break;
+            case R.id.btn6:
+                Intent intent2 = new Intent(this, DaggerAndroidActivity.class);
+                startActivity(intent2);
                 break;
         }
     }

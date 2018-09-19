@@ -48,4 +48,10 @@
         android:layout_width="match_parent"
         android:text="lazy 和 Provider"
         android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btn6"
+        android:layout_width="match_parent"
+        android:text="dagger.android的使用"
+        android:layout_height="wrap_content"/>
 </LinearLayout>

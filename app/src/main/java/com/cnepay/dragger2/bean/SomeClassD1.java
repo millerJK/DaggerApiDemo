@@ -6,6 +6,10 @@ package com.cnepay.dragger2.bean;
 
 public class SomeClassD1 {
 
-    public SomeClassD1(SomeHC1  someHC1) {
+    public SomeClassD1(SomeHC1 someHC1) {
+    }
+
+    public String getName() {
+        return getClass().getSimpleName();
     }
 }

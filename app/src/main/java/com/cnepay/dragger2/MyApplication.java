@@ -1,5 +1,6 @@
 package com.cnepay.dragger2;
 
+import android.app.Activity;
 import android.app.Application;
 import android.util.Log;
 
@@ -19,21 +20,15 @@ import javax.inject.Inject;
 import javax.inject.Provider;
 
 import dagger.Lazy;
+import dagger.android.AndroidInjector;
+import dagger.android.DispatchingAndroidInjector;
+import dagger.android.HasActivityInjector;
 
-/**
- * Created by master on 2018/5/23.
- * <p>
- * 首先尽量不要修改该类component和其依赖的module ，通过查 DaggerAppComponent，十分便于理解Dagger机制
- * AppComponent中依赖了两个 module(AppModule和AppModule2)
- * 为防止遗忘，记录查看源码心得：
- * 1. module + provider 是为了解决引入第三方源码无法修改问题（我们要初始化一个三方类由于源码类无法添加inject注解）
- * 2. dagger 查找实体类会先从component 依赖的module进行查找实体类，若果module中未查找到实体类，再查找类中的inject 注解来实例化对象
- * 3. 在本机中对该类做了细节分析，参考笔记：3.一个示例理解Provider/Module/Inject/Component
- * 4.
- * 5.
- */
 
-public class MyApplication extends Application {
+public class MyApplication extends Application implements HasActivityInjector{
+
+    @Inject
+    DispatchingAndroidInjector<Activity> dispatchingActivityInjector;
 
     private String TAG = MyApplication.class.getSimpleName();
 
@@ -73,7 +68,6 @@ public class MyApplication extends Application {
         mAppComponent = DaggerAppComponent.builder().appModule(new AppModule(this)).build();
         mAppComponent.injectMainApp(this);
 
-        DaggerAppComponent.create();
         app = this;
 
         List<Student> students = new ArrayList<>();
@@ -97,4 +91,8 @@ public class MyApplication extends Application {
     }
 
 
+    @Override
+    public AndroidInjector<Activity> activityInjector() {
+        return dispatchingActivityInjector;
+    }
 }
