@@ -10,11 +10,13 @@ import com.cnepay.dragger2.bean.SomeClassA1;
 import com.cnepay.dragger2.bean.SomeClassB1;
 import com.cnepay.dragger2.bean.SomeHC1;
 import com.cnepay.dragger2.bean.Student;
+import com.cnepay.dragger2.bean.fish.Fish;
 import com.cnepay.dragger2.di.components.DaggerSubParentComponent;
 import com.cnepay.dragger2.di.components.SubParentComponent;
 import com.squareup.okhttp.Request;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -75,6 +77,14 @@ public class SubActivity extends BaseActivity {
     @Inject
     SomeHC1 mSomeHC1;
 
+    @Inject
+    @Named("whiteFish")
+    Fish whiteFish;
+
+    @Inject
+    @Named("blackFish")
+    Fish blackFish;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,7 +104,7 @@ public class SubActivity extends BaseActivity {
         this.student = student;
     }
 
-    @OnClick({R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4,R.id.btn5})
+    @OnClick({R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4, R.id.btn5})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn1:

@@ -9,15 +9,20 @@ import dagger.Module;
 
 /**
  * Created by master on 2018/6/1.
+ * 如果module修饰的类是抽象类的话，抽象方法需要使用bind 进行修饰
  * Bind修饰符只能修饰抽象方法
- * Error:(19, 17) 错误: A @Module may not contain both non-static @Provides methods and abstract @Binds or @Multibinds declarations
+ *
  */
 
 
 @Module
-public abstract class DepModule {
+public abstract class AbsBindModule {
 
     @Binds
     @Named("blackFish")
-    abstract Fish bindBlackFish(com.cnepay.dragger2.bean.fish.BlackFish fish);
+    abstract Fish bindBlackFish(BlackFish fish);
+
+    @Binds
+    @Named("whiteFish")
+    abstract Fish bindWhiteFish(WhiteFish fish);
 }
