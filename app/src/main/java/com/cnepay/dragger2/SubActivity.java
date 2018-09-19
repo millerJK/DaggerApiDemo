@@ -93,7 +93,7 @@ public class SubActivity extends BaseActivity {
         this.student = student;
     }
 
-    @OnClick({R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4,R.id.btn5,R.id.btn6})
+    @OnClick({R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4,R.id.btn5,R.id.btn6,R.id.btn7})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn1:
@@ -121,6 +121,10 @@ public class SubActivity extends BaseActivity {
             case R.id.btn6:
                 Intent intent2 = new Intent(this, DaggerAndroidActivity.class);
                 startActivity(intent2);
+                break;
+            case R.id.btn7:
+                Intent intent3 = new Intent(this, DaggerAndroid2Activity.class);
+                startActivity(intent3);
                 break;
         }
     }

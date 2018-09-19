@@ -2,7 +2,6 @@ package com.cnepay.dragger2;
 
 import android.app.Fragment;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -25,7 +24,7 @@ import dagger.android.HasFragmentInjector;
 /**
  * 主要是验证daggerAndroid的使用
  */
-public class DaggerAndroidActivity extends AppCompatActivity implements HasFragmentInjector {
+public class DaggerAndroidActivity extends BaseDaggerAndroidActivity implements HasFragmentInjector {
 
     public static final String TAG = "DaggerAndroidActivity";
 

@@ -31,6 +31,13 @@
         </activity>
         <activity android:name=".DaggerAndroidActivity">
         </activity>
+        <activity android:name=".DaggerAndroid2Activity">
+        </activity>
+        <activity
+            android:name=".BaseDaggerAndroidActivity"
+            android:label="@string/title_activity_base_dagger_andoird"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
