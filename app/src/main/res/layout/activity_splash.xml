@@ -11,10 +11,14 @@
     <Button
         android:id="@+id/btn2"
         android:layout_width="match_parent"
-        android:text="inject"
+        android:text="inject / COMPONENT"
         android:layout_height="wrap_content"/>
 
-
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="match_parent"
+        android:text="module / PROVIDER"
+        android:layout_height="wrap_content"/>
 
     <Button
         android:id="@+id/btn4"

@@ -53,7 +53,7 @@ public class SplashActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.btn1, R.id.btn2, R.id.btn4, R.id.btn5, R.id.btn6, R.id.btn7, R.id.btn8})
+    @OnClick({R.id.btn1, R.id.btn2,R.id.btn3, R.id.btn4, R.id.btn5, R.id.btn6, R.id.btn7, R.id.btn8})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn1:
@@ -63,6 +63,10 @@ public class SplashActivity extends AppCompatActivity {
             case R.id.btn2:
                 Intent intent10 = new Intent(this, InjectActivity.class);
                 startActivity(intent10);
+                break;
+            case R.id.btn3:
+                Intent intent11 = new Intent(this, ModuleAndProvideActivity.class);
+                startActivity(intent11);
                 break;
             case R.id.btn4:
                 Intent intent = new Intent(this, DepActivity.class);

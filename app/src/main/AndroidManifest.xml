@@ -40,6 +40,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".InjectActivity"/>
+        <activity android:name=".ModuleAndProvideActivity">
+        </activity>
     </application>
 
 </manifest>
