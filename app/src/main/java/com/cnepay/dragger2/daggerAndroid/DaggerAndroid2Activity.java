@@ -1,6 +1,8 @@
-package com.cnepay.dragger2;
+package com.cnepay.dragger2.daggerAndroid;
 
 import android.os.Bundle;
+
+import com.cnepay.dragger2.R;
 
 public class DaggerAndroid2Activity extends BaseDaggerAndroidActivity {
 

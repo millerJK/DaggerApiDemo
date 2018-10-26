@@ -1,4 +1,4 @@
-package com.cnepay.dragger2;
+package com.cnepay.dragger2.daggerAndroid;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

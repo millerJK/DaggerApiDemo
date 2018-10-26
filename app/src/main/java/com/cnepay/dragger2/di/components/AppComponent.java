@@ -1,7 +1,8 @@
 package com.cnepay.dragger2.di.components;
 
+import android.app.Application;
+
 import com.cnepay.dragger2.MyApplication;
-import com.cnepay.dragger2.bean.SomeHC1;
 import com.cnepay.dragger2.di.modules.ActivityBindModule;
 import com.cnepay.dragger2.di.modules.AppModule;
 import com.cnepay.dragger2.di.modules.AppModule2;
@@ -9,6 +10,7 @@ import com.squareup.okhttp.OkHttpClient;
 
 import javax.inject.Singleton;
 
+import dagger.BindsInstance;
 import dagger.Component;
 
 /**
@@ -66,10 +68,14 @@ public interface AppComponent {
 
     OkHttpClient getOkHttpClient();
 
-    MyApplication getApplication();
+    Application getApplication();
 
-    SomeHC1 getSomeHc1();
-
+    @Component.Builder
+    interface Builder {
+        @BindsInstance
+        Builder application(Application application);
+        AppComponent build();
+    }
 
     void injectMainApp(MyApplication application);
 

@@ -13,8 +13,8 @@ import javax.inject.Provider;
 import dagger.Lazy;
 
 /**
- * 通过Lazy 获取到的对象是单例的，懒加载，把类的初始化放大 lazy的 get中
- * provider 则是调用一次get 同样是把类的初始化延迟到get中
+ * 通过Lazy 获取到的对象是单例的，懒加载，把类的初始化放到 lazy的get中，只有真正调用调用了get才会创建对象，
+ * provider  同样是把类的初始化延迟到get中，不同点在于Lazy 获取到的对象是单例的，但是provider 每 get 一次就创建一次对象。
  */
 public class LazyAndProviderActivity extends AppCompatActivity {
 

@@ -1,6 +1,6 @@
 package com.cnepay.dragger2.di.components;
 
-import com.cnepay.dragger2.DaggerAndroidFragment;
+import com.cnepay.dragger2.daggerAndroid.DaggerAndroidFragment;
 import com.cnepay.dragger2.di.modules.DaggerFragmentModule;
 
 import dagger.Subcomponent;

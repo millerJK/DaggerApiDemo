@@ -3,8 +3,10 @@ package com.cnepay.dragger2.di.modules;
 import com.cnepay.dragger2.MyApplication;
 import com.cnepay.dragger2.bean.SomeClassD1;
 import com.cnepay.dragger2.bean.SomeHC1;
+import com.cnepay.dragger2.bean.Student;
 import com.squareup.okhttp.OkHttpClient;
 
+import javax.inject.Named;
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -21,16 +23,15 @@ public class AppModule {
 
     private MyApplication mApplication;
 
-//    public AppModule() {
-//    }
-
-    public AppModule(MyApplication context) {
-        this.mApplication = context;
+    @Provides
+    @Named("someClassD11")
+    SomeClassD1 provideSomeClassD1(Student someHC1) {
+        return new SomeClassD1(someHC1);
     }
 
-
     @Provides
-    SomeClassD1 provideSomeClassD1(SomeHC1 someHC1) {
+    @Named("someClassD1")
+    SomeClassD1 provideSomeClassD11(SomeHC1 someHC1) {
         return new SomeClassD1(someHC1);
     }
 
@@ -42,7 +43,7 @@ public class AppModule {
 
     @Provides
     @Singleton
-    MyApplication getApplication() {
+    MyApplication provideApplication() {
         return mApplication;
     }
 }

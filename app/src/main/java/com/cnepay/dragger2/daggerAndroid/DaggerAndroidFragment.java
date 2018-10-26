@@ -1,4 +1,4 @@
-package com.cnepay.dragger2;
+package com.cnepay.dragger2.daggerAndroid;
 
 
 import android.app.Activity;
@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.cnepay.dragger2.R;
 import com.cnepay.dragger2.bean.ModuleDaggerFragmentBean;
 
 import javax.inject.Inject;

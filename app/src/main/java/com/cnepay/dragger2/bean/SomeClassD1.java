@@ -9,6 +9,10 @@ public class SomeClassD1 {
     public SomeClassD1(SomeHC1 someHC1) {
     }
 
+    public SomeClassD1(Student student){
+
+    }
+
     public String getName() {
         return getClass().getSimpleName();
     }

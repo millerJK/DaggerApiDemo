@@ -1,10 +1,11 @@
-package com.cnepay.dragger2;
+package com.cnepay.dragger2.daggerAndroid;
 
 import android.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.cnepay.dragger2.R;
 import com.cnepay.dragger2.bean.ModuleDaggerAndroid;
 import com.cnepay.dragger2.bean.SomeClassD1;
 import com.squareup.okhttp.Callback;
@@ -15,6 +16,7 @@ import com.squareup.okhttp.Response;
 import java.io.IOException;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import dagger.android.AndroidInjection;
 import dagger.android.AndroidInjector;
@@ -39,7 +41,9 @@ public class DaggerAndroidActivity extends BaseDaggerAndroidActivity implements 
 
     @Inject
     OkHttpClient client1;
+
     @Inject
+    @Named("someClassD1")
     SomeClassD1 mSomeClassD1;
 
     @Override

@@ -13,13 +13,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SubActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
         <activity
             android:name=".DepActivity"
             android:label="@string/title_activity_dependence"
@@ -27,17 +20,26 @@
         </activity>
         <activity android:name=".LazyAndProviderActivity">
         </activity>
+        <activity android:name=".SubActivity">
+        </activity>
         <activity android:name=".QualiferActivity">
         </activity>
-        <activity android:name=".DaggerAndroidActivity">
+        <activity android:name=".daggerAndroid.DaggerAndroidActivity">
         </activity>
-        <activity android:name=".DaggerAndroid2Activity">
+        <activity android:name=".daggerAndroid.DaggerAndroid2Activity">
         </activity>
-        <activity
-            android:name=".BaseDaggerAndroidActivity"
-            android:label="@string/title_activity_base_dagger_andoird"
-            android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".lifecycle.UserActivity">
         </activity>
+        <activity android:name=".BaseMvpActivity">
+        </activity>
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".InjectActivity"/>
     </application>
 
 </manifest>

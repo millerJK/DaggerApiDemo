@@ -10,6 +10,9 @@ import com.cnepay.dragger2.di.components.QualiferComponent;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+/**
+ * 阐述Qualifier注解使用，Named是自带的，如需要自定义Qualifer参照Named定义即可
+ */
 public class QualiferActivity extends AppCompatActivity {
 
     @Inject
@@ -19,9 +22,6 @@ public class QualiferActivity extends AppCompatActivity {
     @Inject
     @Named("student2")
     Student student2;
-
-    @Inject
-    Student st;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

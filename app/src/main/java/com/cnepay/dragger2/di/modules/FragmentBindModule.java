@@ -2,7 +2,7 @@ package com.cnepay.dragger2.di.modules;
 
 import android.app.Fragment;
 
-import com.cnepay.dragger2.DaggerAndroidFragment;
+import com.cnepay.dragger2.daggerAndroid.DaggerAndroidFragment;
 import com.cnepay.dragger2.di.components.DaggerAndroidFragmentComponent;
 
 import dagger.Binds;
